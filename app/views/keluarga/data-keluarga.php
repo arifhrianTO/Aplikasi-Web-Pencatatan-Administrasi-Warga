@@ -34,10 +34,11 @@ $query = "
            k.alamat_domisil,
            w.nama AS kepala_keluarga
     FROM keluarga k
-    LEFT JOIN warga w 
+    JOIN warga w 
         ON k.no_kk = w.no_kk 
         AND w.hubungan = 'Kepala Keluarga'
-    $filter  
+        AND w.status= 'Aktif'
+    $filter 
     ORDER BY k.no_kk ASC 
 ";
 
